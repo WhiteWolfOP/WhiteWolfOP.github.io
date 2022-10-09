@@ -21,23 +21,63 @@
             <td width="50%">
               <span id="emot-health">❤</span>
               <span>Human</span>
-              <span id="human_health">1000</span>
+              <span id="human_health">10000</span>
             </td>
             <td width="50%" style="text-align: right">
               <span id="emot-health">❤</span>
               <span>Monster</span>
-              <span id="monster-health">10000</span>
+              <span id="monster_health">10000</span>
             </td>
           </tr>
         </table>
       </div>
     </section>
     <section class="section2">
+      <div class="choose" id="choose">
+        <table width="100%">
+          <tr>
+            <td width="30%" style="text-align: center">
+              <img
+                src="img/paper.png"
+                alt="img/paper.png"
+                width="50px"
+                onclick="attackFunc('paper')"
+              />
+            </td>
+            <td width="30%" style="text-align: center">
+              <img
+                src="img/rock.png"
+                alt="img/rock.pngs"
+                width="50px"
+                onclick="attackFunc('rock')"
+              />
+            </td>
+            <td width="30%" style="text-align: center">
+              <img
+                src="img/scissors.png"
+                alt="img/scissors.png"
+                width="50px"
+                onclick="attackFunc('scissors')"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
       <div class="serang" style="text-align: center">
-        <button type="button" id="attack" onclick="attackFunc()">
+        <button
+          type="button"
+          id="attack"
+          onclick="showType(this.value)"
+          value="0"
+        >
           Basic attack
         </button>
-        <button type="button" id="ulti" onclick="ultiFunc()">
+        <button
+          type="button"
+          id="ulti"
+          onclick="showType(this.value)"
+          value="1"
+        >
           Ultimate attack
         </button>
       </div>
