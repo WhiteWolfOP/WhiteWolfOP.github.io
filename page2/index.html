@@ -14,12 +14,12 @@
           <div class="spotChar" id="spotChar">
             <img
               id="hero"
-              src="img/hero3.gif"
+              src="img/enemy.gif"
               alt=""
               width="160px"
               style="transform: rotateY(180deg)"
             />
-            <img id="monster" src="img/enemy.gif" alt="" width="160px" />
+            <img id="monster" src="img/hero3.gif" alt="" width="160px" />
           </div>
           <div class="spotSpark" id="spotSpark">
             <img id="spark" src="img/spark.gif" alt="" width="100px" />
@@ -32,7 +32,7 @@
             <td width="50%">
               <span id="emot-health">❤</span>
               <span>Human</span>
-              <span id="human_health">10000</span>
+              <span id="human_health">5000</span>
             </td>
             <td width="50%" style="text-align: right">
               <span id="emot-health">❤</span>
@@ -44,6 +44,24 @@
       </div>
     </section>
     <section class="section2">
+      <div class="serang" style="text-align: center">
+        <button
+          type="button"
+          id="attack"
+          onclick="showType(this.value)"
+          value="0"
+        >
+          Basic attack
+        </button>
+        <button
+          type="button"
+          id="ulti"
+          onclick="showType(this.value)"
+          value="1"
+        >
+          Ultimate attack
+        </button>
+      </div>
       <div class="choose" id="choose">
         <table width="100%">
           <tr>
@@ -74,23 +92,21 @@
           </tr>
         </table>
       </div>
-      <div class="serang" style="text-align: center">
-        <button
-          type="button"
-          id="attack"
-          onclick="showType(this.value)"
-          value="0"
-        >
-          Basic attack
-        </button>
-        <button
-          type="button"
-          id="ulti"
-          onclick="showType(this.value)"
-          value="1"
-        >
-          Ultimate attack
-        </button>
+      <div class="result" id="result">
+        <table width="100%">
+          <h3 id="stat" style="text-align: center"></h3>
+          <tr>
+            <td width="30%" style="text-align: center">
+              <img id="res1" alt="" width="50px" />
+            </td>
+            <td width="30%" style="text-align: center">
+              <img src="img/vs.png" alt="" width="25px" />
+            </td>
+            <td width="30%" style="text-align: center">
+              <img id="res2" alt="" width="50px" />
+            </td>
+          </tr>
+        </table>
       </div>
       <div class="gacha"></div>
     </section>

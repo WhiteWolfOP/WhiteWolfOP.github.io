@@ -33,6 +33,11 @@
 /* end section 1 */
 
 /* section 2 */
+
+.section2 {
+  font-family: "Roboto", sans-serif;
+}
+
 .section2 > .serang > button {
   border: none;
   color: #fff;
@@ -47,4 +52,8 @@
   background-color: #8a1b13;
   padding: 5px;
   border-radius: 5px;
+}
+
+.section2 > div {
+  margin-bottom: 20px;
 }
