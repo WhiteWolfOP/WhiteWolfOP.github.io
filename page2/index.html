@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fighting</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <section class="section1">
+      <div class="konten">
+        <div class="object">
+          <img src="img/hero.gif" alt="" width="100px" />
+          <img src="img/monster.gif" alt="" width="200px" />
+        </div>
+      </div>
+      <div class="nyawa">
+        <table width="100%">
+          <tr>
+            <td width="50%">
+              <span id="emot-health">❤</span>
+              <span>Human</span>
+              <span id="human_health">1000</span>
+            </td>
+            <td width="50%" style="text-align: right">
+              <span id="emot-health">❤</span>
+              <span>Monster</span>
+              <span id="monster-health">10000</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="section2">
+      <div class="serang" style="text-align: center">
+        <button type="button" id="attack" onclick="attackFunc()">
+          Basic attack
+        </button>
+        <button type="button" id="ulti" onclick="ultiFunc()">
+          Ultimate attack
+        </button>
+      </div>
+      <div class="gacha"></div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
