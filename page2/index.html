@@ -10,9 +10,20 @@
   <body>
     <section class="section1">
       <div class="konten">
-        <div class="object">
-          <img src="img/hero.gif" alt="" width="100px" />
-          <img src="img/monster.gif" alt="" width="200px" />
+        <div class="object" style="text-align: center">
+          <div class="spotChar" id="spotChar">
+            <img
+              id="hero"
+              src="img/hero3.gif"
+              alt=""
+              width="160px"
+              style="transform: rotateY(180deg)"
+            />
+            <img id="monster" src="img/enemy.gif" alt="" width="160px" />
+          </div>
+          <div class="spotSpark" id="spotSpark">
+            <img id="spark" src="img/spark.gif" alt="" width="100px" />
+          </div>
         </div>
       </div>
       <div class="nyawa">
@@ -25,7 +36,7 @@
             </td>
             <td width="50%" style="text-align: right">
               <span id="emot-health">❤</span>
-              <span>Monster</span>
+              <span>Enemy</span>
               <span id="monster_health">10000</span>
             </td>
           </tr>
