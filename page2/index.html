@@ -1,115 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fighting</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <section class="section1">
-      <div class="konten">
-        <div class="object" style="text-align: center">
-          <div class="spotChar" id="spotChar">
-            <img
-              id="hero"
-              src="img/enemy.gif"
-              alt=""
-              width="160px"
-              style="transform: rotateY(180deg)"
-            />
-            <img id="monster" src="img/hero3.gif" alt="" width="160px" />
-          </div>
-          <div class="spotSpark" id="spotSpark">
-            <img id="spark" src="img/spark.gif" alt="" width="100px" />
-          </div>
+        <div class="konten" style="box-sizing: border-box;">
+            <div class="object" style="text-align: center; box-sizing: border-box;">
+                <div class="spotChar" id="spotChar" style="box-sizing: border-box;">
+                    <img id="hero" src="img/enemy.gif" alt="" width="160px" style="transform: rotateY(180deg)" />
+                    <img id="monster" src="img/hero3.gif" alt="" width="160px" />
+                </div>
+                <div class="spotSpark" id="spotSpark" style="box-sizing: border-box;">
+                    <img id="spark" src="img/spark.gif" alt="" width="100px" />
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="nyawa">
-        <table width="100%">
-          <tr>
-            <td width="50%">
-              <span id="emot-health">❤</span>
-              <span>Human</span>
-              <span id="human_health">5000</span>
-            </td>
-            <td width="50%" style="text-align: right">
-              <span id="emot-health">❤</span>
-              <span>Enemy</span>
-              <span id="monster_health">10000</span>
-            </td>
-          </tr>
-        </table>
-      </div>
+        <div class="nyawa">
+            <table width="100%">
+                <tr>
+                    <td width="50%">
+                        <span id="emot-health">❤</span>
+                        <span>Human</span>
+                        <span id="human_health">4000</span>
+                    </td>
+                    <td width="50%" style="text-align: right">
+                        <span id="emot-health">❤</span>
+                        <span>Enemy</span>
+                        <span id="monster_health">5000</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
     <section class="section2">
-      <div class="serang" style="text-align: center">
-        <button
-          type="button"
-          id="attack"
-          onclick="showType(this.value)"
-          value="0"
-        >
+        <div class="serang" style="text-align: center">
+            <button type="button" id="attack" onclick="showType(this.value)" value="0">
           Basic attack
         </button>
-        <button
-          type="button"
-          id="ulti"
-          onclick="showType(this.value)"
-          value="1"
-        >
+            <button type="button" id="ulti" onclick="showType(this.value)" value="1">
           Ultimate attack
         </button>
-      </div>
-      <div class="choose" id="choose">
-        <table width="100%">
-          <tr>
-            <td width="30%" style="text-align: center">
-              <img
-                src="img/paper.png"
-                alt="img/paper.png"
-                width="50px"
-                onclick="attackFunc('paper')"
-              />
-            </td>
-            <td width="30%" style="text-align: center">
-              <img
-                src="img/rock.png"
-                alt="img/rock.pngs"
-                width="50px"
-                onclick="attackFunc('rock')"
-              />
-            </td>
-            <td width="30%" style="text-align: center">
-              <img
-                src="img/scissors.png"
-                alt="img/scissors.png"
-                width="50px"
-                onclick="attackFunc('scissors')"
-              />
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="result" id="result">
-        <table width="100%">
-          <h3 id="stat" style="text-align: center"></h3>
-          <tr>
-            <td width="30%" style="text-align: center">
-              <img id="res1" alt="" width="50px" />
-            </td>
-            <td width="30%" style="text-align: center">
-              <img src="img/vs.png" alt="" width="25px" />
-            </td>
-            <td width="30%" style="text-align: center">
-              <img id="res2" alt="" width="50px" />
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="gacha"></div>
+        </div>
+        <div class="choose" id="choose">
+            <table width="100%">
+                <tr>
+                    <td width="30%" style="text-align: center">
+                        <img src="img/paper.png" alt="img/paper.png" width="50px" onclick="attackFunc('paper')" />
+                    </td>
+                    <td width="30%" style="text-align: center">
+                        <img src="img/rock.png" alt="img/rock.pngs" width="50px" onclick="attackFunc('rock')" />
+                    </td>
+                    <td width="30%" style="text-align: center">
+                        <img src="img/scissors.png" alt="img/scissors.png" width="50px" onclick="attackFunc('scissors')" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="result" id="result">
+            <table width="100%">
+                <h3 id="stat" style="text-align: center"></h3>
+                <tr>
+                    <td width="30%" style="text-align: center">
+                        <img id="res1" alt="" width="50px" />
+                    </td>
+                    <td width="30%" style="text-align: center">
+                        <img src="img/vs.png" alt="" width="25px" />
+                    </td>
+                    <td width="30%" style="text-align: center">
+                        <img id="res2" alt="" width="50px" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="gacha"></div>
     </section>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
