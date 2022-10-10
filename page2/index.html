@@ -12,12 +12,12 @@
 <body>
     <section class="section1">
         <div class="konten" style="box-sizing: border-box;">
-            <div class="object" style="text-align: center; box-sizing: border-box;">
-                <div class="spotChar" id="spotChar" style="box-sizing: border-box;">
+            <div class="object" style="text-align: center;">
+                <div class="spotChar" id="spotChar">
                     <img id="hero" src="img/enemy.gif" alt="" width="160px" style="transform: rotateY(180deg)" />
                     <img id="monster" src="img/hero3.gif" alt="" width="160px" />
                 </div>
-                <div class="spotSpark" id="spotSpark" style="box-sizing: border-box;">
+                <div class="spotSpark" id="spotSpark">
                     <img id="spark" src="img/spark.gif" alt="" width="100px" />
                 </div>
             </div>
@@ -28,18 +28,18 @@
                     <td width="50%">
                         <span id="emot-health">❤</span>
                         <span>Human</span>
-                        <span id="human_health">4000</span>
+                        <span id="human_health">5000</span>
                     </td>
                     <td width="50%" style="text-align: right">
                         <span id="emot-health">❤</span>
                         <span>Enemy</span>
-                        <span id="monster_health">5000</span>
+                        <span id="monster_health">6000</span>
                     </td>
                 </tr>
             </table>
         </div>
     </section>
-    <section class="section2">
+    <section class="section2" id="section2">
         <div class="serang" style="text-align: center">
             <button type="button" id="attack" onclick="showType(this.value)" value="0">
           Basic attack
@@ -79,7 +79,17 @@
                 </tr>
             </table>
         </div>
-        <div class="gacha"></div>
+    </section>
+    <section class="section3" id="section3">
+        <div class="reloadButton">
+            <button type="button" id="reloadButton" onclick="reloadPage()">Reload page</button>
+        </div>
+        <div class="gacha">
+            <h4 id="jenis_reward"></h4>
+            <img src="img/chestYeah.gif" alt="img/chest.png" width="150px" onclick="openChest()" id="opChest">
+            <img src="" alt="" width="150px" id="rew">
+            <a href="" id="collect" download>Collect reward</a>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>

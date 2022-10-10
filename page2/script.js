@@ -4,25 +4,20 @@ var attack = new Audio("music/slice.wav");
 var draw = new Audio("music/draw.wav");
 var ulti = new Audio("music/dragon.mp3");
 var bg = new Audio("music/bg.wav");
+var op = new Audio("music/open.mp3");
 
 document.getElementById("choose").style.display = "none";
 document.getElementById("result").style.display = "none";
 document.getElementById("spotSpark").style.display = "none";
+document.getElementById("section3").style.display = "none";
+document.getElementById("collect").style.display = "none";
 
 function showType(status) {
-    const health_human = document.getElementById("human_health").innerHTML;
-    const health_monster = document.getElementById("monster_health").innerHTML;
-    if (health_human <= 0) {
-        alert("Lose");
-        location.reload();
-    } else if (health_monster <= 0) {
-        alert("Win");
-        location.reload();
-    } else {
-        bg.play();
-        document.getElementById("choose").style.display = "block";
-        attackType = status;
-    }
+    // const health_human = document.getElementById("human_health").innerHTML;
+    // const health_monster = document.getElementById("monster_health").innerHTML;
+    bg.play();
+    document.getElementById("choose").style.display = "block";
+    attackType = status;
     return;
 }
 
@@ -71,8 +66,18 @@ function exeDamage(sign, damage, result, type) {
                 attack.play();
                 setTimeout(setMonster, 1000);
             }
+
             jumlah = parseInt(monster_health) - parseInt(damage);
-            document.getElementById("monster_health").innerHTML = jumlah;
+
+            if (jumlah <= 0) {
+                bg.pause();
+                showWin();
+                document.getElementById("monster_health").innerHTML = "0";
+                return;
+            } else {
+                document.getElementById("monster_health").innerHTML = jumlah;
+            }
+
         } else if (result === "scissors") {
             sts = "Lose";
             if (type > 0) {
@@ -85,8 +90,18 @@ function exeDamage(sign, damage, result, type) {
                 attack.play();
                 setTimeout(setHuman, 1000);
             }
+
             jumlah = parseInt(human_health) - parseInt(damage);
-            document.getElementById("human_health").innerHTML = jumlah;
+
+            if (jumlah <= 0) {
+                alert(sts);
+                document.getElementById("human_health").innerHTML = "0";
+                location.reload();
+                return;
+            } else {
+                document.getElementById("human_health").innerHTML = jumlah;
+            }
+
         }
     } else if (sign === "rock") {
         if (result === "paper") {
@@ -101,8 +116,18 @@ function exeDamage(sign, damage, result, type) {
                 attack.play();
                 setTimeout(setHuman, 1000);
             }
+
             jumlah = parseInt(human_health) - parseInt(damage);
-            document.getElementById("human_health").innerHTML = jumlah;
+
+            if (jumlah <= 0) {
+                alert(sts);
+                document.getElementById("human_health").innerHTML = "0";
+                location.reload();
+                return;
+            } else {
+                document.getElementById("human_health").innerHTML = jumlah;
+            }
+
         } else if (result === "rock") {
             sts = "Draw";
             document.getElementById("spotChar").style.display = "none";
@@ -121,8 +146,17 @@ function exeDamage(sign, damage, result, type) {
                 attack.play();
                 setTimeout(setMonster, 1000);
             }
+
             jumlah = parseInt(monster_health) - parseInt(damage);
-            document.getElementById("monster_health").innerHTML = jumlah;
+
+            if (jumlah <= 0) {
+                bg.pause();
+                showWin();
+                document.getElementById("monster_health").innerHTML = "0";
+                return;
+            } else {
+                document.getElementById("monster_health").innerHTML = jumlah;
+            }
         }
     } else if (sign === "scissors") {
         if (result === "paper") {
@@ -137,8 +171,18 @@ function exeDamage(sign, damage, result, type) {
                 attack.play();
                 setTimeout(setMonster, 1000);
             }
+
             jumlah = parseInt(monster_health) - parseInt(damage);
-            document.getElementById("monster_health").innerHTML = jumlah;
+
+            if (jumlah <= 0) {
+                bg.pause();
+                showWin();
+                document.getElementById("monster_health").innerHTML = "0";
+                return;
+            } else {
+                document.getElementById("monster_health").innerHTML = jumlah;
+            }
+
         } else if (result === "rock") {
             sts = "Lose";
             if (type > 0) {
@@ -151,8 +195,18 @@ function exeDamage(sign, damage, result, type) {
                 attack.play();
                 setTimeout(setHuman, 1000);
             }
+
             jumlah = parseInt(human_health) - parseInt(damage);
-            document.getElementById("human_health").innerHTML = jumlah;
+
+            if (jumlah <= 0) {
+                alert(sts);
+                document.getElementById("human_health").innerHTML = "0";
+                location.reload();
+                return;
+            } else {
+                document.getElementById("human_health").innerHTML = jumlah;
+            }
+
         } else if (result === "scissors") {
             sts = "Draw";
             document.getElementById("spotChar").style.display = "none";
@@ -189,6 +243,44 @@ function showStatus(sign, result, sts) {
     document.getElementById("result").style.display = "block";
     setTimeout(setButton, 5000);
     return;
+}
+
+function showWin() {
+
+    document.getElementById("section2").style.display = "none";
+    document.getElementById("section3").style.display = "block";
+    return;
+
+}
+
+function reloadPage() {
+    location.reload();
+}
+
+function openChest() {
+
+    op.play();
+    const rand_reward = ['warrior.png', 'warrior1.png', 'warrior2.png', 'warrior3.png', 'warrior4.png', 'warrior5.png'];
+    const result_rand = rand_reward[Math.floor(Math.random() * rand_reward.length)];
+
+    document.getElementById("opChest").style.display = "none";
+
+    if (result_rand === "warrior5.png") {
+        document.getElementById("jenis_reward").innerHTML = "Rare";
+        document.getElementById("jenis_reward").style.color = "greenyellow";
+        document.getElementById("rew").src = "reward/" + result_rand;
+        document.getElementById("collect").setAttribute("href", "reward/" + result_rand);
+    } else {
+        document.getElementById("jenis_reward").innerHTML = "Common";
+        document.getElementById("jenis_reward").style.color = "greenyellow";
+        document.getElementById("rew").src = "reward/" + result_rand;
+        document.getElementById("collect").setAttribute("href", "reward/" + result_rand);
+    }
+
+    document.getElementById("collect").style.display = "block";
+
+    return;
+
 }
 
 function setMonster() {
